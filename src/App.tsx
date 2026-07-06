@@ -21,12 +21,12 @@ export default function App() {
       <Skills />
       <Tools />
       <Experience />
+      <Certifications />
       <DocumentationSamples />
       <WhyHireMe />
       <Workflow />
       <Projects />
       <Learning />
-      <Certifications />
       <Contact />
       <Footer />
     </main>
@@ -42,10 +42,10 @@ function Header() {
     { label: "Skills", href: "#skills" },
     { label: "Tools", href: "#tools" },
     { label: "Experience", href: "#experience" },
+    { label: "Certifications", href: "#certifications" },
     { label: "Documentation", href: "#documentation" },
     { label: "Workflow", href: "#workflow" },
     { label: "Projects", href: "#projects" },
-    { label: "Certifications", href: "#certifications" },
     { label: "Contact", href: "#contact" },
   ];
 

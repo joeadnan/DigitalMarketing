@@ -429,17 +429,29 @@ export const certifications: Certification[] = [
     ],
   },
   {
-    id: "technical-seo-audit",
-    title: "Technical SEO & Website Audit",
-    issuer: "Self Learning / Portfolio Project",
-    year: "2026",
-    status: "Planned",
-    category: "Technical SEO",
-    imageUrl: "/certifications/technical-seo-audit.svg",
+    id: "figma-ui-design",
+    title: "Figma UI Design",
+    issuer: "Self Learning / UI Design Practice",
+    year: "2025",
+    status: "Completed",
+    category: "UI/UX Design",
+    imageUrl: "/certifications/FIGMA UI-UX CODEPOLITAN.jpg",
     description:
-      "Rencana pembelajaran audit teknis website seperti crawlability, indexing, sitemap, robots.txt, page speed, mobile usability, dan schema basic.",
-    skills: ["Audit", "Indexing", "PageSpeed", "Sitemap"],
+      "Mempelajari dasar penggunaan Figma untuk membuat desain antarmuka aplikasi dan website, mulai dari layout, komponen, typography, color style, wireframe, prototyping, hingga pembuatan desain UI yang modern, rapi, dan user-friendly.",
+    skills: [
+      "Figma",
+      "UI Design",
+      "UX Design Basics",
+      "Wireframe",
+      "Prototype",
+      "Layout Design",
+      "Typography",
+      "Color Style",
+      "Component Design",
+      "Responsive Design",
+    ],
   },
+
   {
     id: "fullstack-javascript-developer",
     title: "Fullstack JavaScript Developer",
@@ -460,6 +472,18 @@ export const certifications: Certification[] = [
       "Authentication",
       "Fullstack Development",
     ],
+  },
+  {
+    id: "technical-seo-audit",
+    title: "Technical SEO & Website Audit",
+    issuer: "Self Learning / Portfolio Project",
+    year: "2026",
+    status: "Planned",
+    category: "Technical SEO",
+    imageUrl: "/certifications/technical-seo-audit.svg",
+    description:
+      "Rencana pembelajaran audit teknis website seperti crawlability, indexing, sitemap, robots.txt, page speed, mobile usability, dan schema basic.",
+    skills: ["Audit", "Indexing", "PageSpeed", "Sitemap"],
   },
 ];
 

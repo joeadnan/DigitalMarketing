@@ -9,7 +9,7 @@ export function Experience() {
         <Reveal>
           <SectionTitle
             eyebrow="Work Experience"
-            title="Experience yang Relevan untuk SEO Specialist"
+            title="Experience SEO Specialist"
             description=""
           />
         </Reveal>
