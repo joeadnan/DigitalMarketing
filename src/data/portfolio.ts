@@ -519,28 +519,28 @@ export const documentationSamples = [
     title: "Technical SEO Audit Report",
     description:
       "Contoh laporan audit SEO teknis berisi issue, lokasi halaman, dampak, prioritas, dan rekomendasi perbaikan.",
-    fileUrl: "/documents/technical-seo-audit-report.md",
+    fileUrl: "/documents/Technical_SEO_Audit_Report.pdf",
     tags: ["Technical SEO", "Audit", "Checklist"],
   },
   {
     title: "Keyword Research Map",
     description:
       "Contoh keyword mapping berisi keyword utama, long-tail keyword, search intent, funnel stage, prioritas, dan target halaman.",
-    fileUrl: "/documents/keyword-research-map.md",
+    fileUrl: "/documents/Keyword_Research_Map.pdf",
     tags: ["Keyword", "Intent", "Content Strategy"],
   },
   {
     title: "On-Page SEO Checklist",
     description:
       "Checklist optimasi halaman untuk title, meta description, H1-H3, URL, internal link, image alt, FAQ, dan CTA.",
-    fileUrl: "/documents/on-page-seo-checklist.md",
+    fileUrl: "/documents/On_Page_SEO_Checklist.pdf",
     tags: ["On-Page", "Meta Tags", "Internal Link"],
   },
   {
     title: "SEO Performance Report",
     description:
       "Template laporan performa SEO untuk membaca clicks, impressions, CTR, average position, top query, top page, dan rekomendasi.",
-    fileUrl: "/documents/seo-performance-report.md",
+    fileUrl: "/documents/SEO_Performance_Report.pdf",
     tags: ["GSC", "GA4", "Reporting"],
   },
 ];
