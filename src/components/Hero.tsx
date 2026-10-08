@@ -1,292 +1,232 @@
+import {
+  ArrowUpRight,
+  Download,
+  MessageCircle,
+  MapPin,
+  CheckCircle2,
+  Search,
+  BarChart3,
+  FileSearch,
+  TrendingUp,
+  Globe2,
+} from "lucide-react";
+
 import { availability, profile } from "../data/portfolio";
 
-const processCards = [
-  ["SEO Audit", "Technical issue, page structure, and priority mapped"],
-  ["Keyword Mapping", "Keyword, search intent, and target page aligned"],
-  ["GSC Report", "Clicks, impressions, CTR, and queries reviewed"],
-  ["Optimization", "Recommendation summarized into next SEO action"],
-];
 const heroStats = [
-  ["SEO", "Audit & Optimization"],
-  ["GSC", "Performance Analysis"],
-  ["Content", "Keyword & Intent"],
+  {
+    icon: Search,
+    title: "SEO",
+    description: "Audit & Optimization",
+  },
+  {
+    icon: BarChart3,
+    title: "GSC",
+    description: "Performance Analysis",
+  },
+  {
+    icon: FileSearch,
+    title: "Content",
+    description: "Keyword & Intent",
+  },
+  {
+    icon: TrendingUp,
+    title: "Growth",
+    description: "Organic Strategy",
+  },
 ];
-
-// export function Hero() {
-//   return (
-//     <section
-//       id="home"
-//       className="relative overflow-hidden border-b border-white/10 bg-slate-950"
-//     >
-//       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(14,165,233,0.22),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.14),transparent_35%)]" />
-
-//       <div className="relative mx-auto grid min-h-screen max-w-7xl items-center gap-12 px-6 py-28 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
-//         <div>
-//           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-sky-400/30 bg-sky-400/10 px-4 py-2 text-sm text-sky-200">
-//             <span className="h-2 w-2 rounded-full bg-emerald-400" />
-//             {profile.status}
-//           </div>
-
-//           <h1 className="max-w-4xl text-4xl font-bold tracking-tight text-white md:text-6xl">
-//             {profile.name}
-//             <span className="mt-3 block bg-gradient-to-r from-sky-300 to-emerald-300 bg-clip-text text-transparent">
-//               {profile.role}
-//             </span>
-//           </h1>
-
-//           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-//             {profile.summary}
-//           </p>
-
-//           <div className="mt-8 flex flex-wrap gap-4">
-//             <a
-//               href={profile.cv}
-//               target="_blank"
-//               rel="noreferrer"
-//               download
-//               className="rounded-xl bg-sky-400 px-6 py-3 text-sm font-bold text-slate-950 transition hover:bg-sky-300"
-//             >
-//               Download CV
-//             </a>
-
-//             <a
-//               href={profile.whatsapp}
-//               target="_blank"
-//               rel="noreferrer"
-//               className="rounded-xl border border-white/15 bg-white/10 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/15"
-//             >
-//               Hubungi WhatsApp
-//             </a>
-
-//             <a
-//               href="#projects"
-//               className="rounded-xl border border-white/15 px-6 py-3 text-sm font-bold text-slate-200 transition hover:bg-white/10"
-//             >
-//               Lihat Project
-//             </a>
-//           </div>
-
-//           <div className="mt-6 grid gap-3 rounded-3xl border border-white/10 bg-white/[0.04] p-4 text-sm text-slate-300 sm:grid-cols-2">
-//             <div>
-//               <p className="text-slate-500">Status</p>
-//               <p className="font-semibold text-emerald-300">
-//                 {availability.status}
-//               </p>
-//             </div>
-
-//             <div>
-//               <p className="text-slate-500">Location</p>
-//               <p className="font-semibold text-white">{availability.location}</p>
-//             </div>
-
-//             <div>
-//               <p className="text-slate-500">Target Role</p>
-//               <p className="font-semibold text-white">
-//                 {availability.targetRoles.slice(0, 2).join(" / ")}
-//               </p>
-//             </div>
-
-//             <div>
-//               <p className="text-slate-500">Work Type</p>
-//               <p className="font-semibold text-white">
-//                 {availability.workTypes.join(" / ")}
-//               </p>
-//             </div>
-//           </div>
-
-//           <div className="mt-10 grid max-w-2xl gap-4 sm:grid-cols-3">
-//             {heroStats.map(([value, label]) => (
-//               <div key={value} className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-//                 <p className="text-2xl font-bold text-white">{value}</p>
-//                 <p className="mt-1 text-sm text-slate-400">{label}</p>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-
-//         <div className="relative">
-//           <div className="rounded-[2rem] border border-white/10 bg-white/[0.05] p-6 shadow-2xl backdrop-blur">
-//             <div className="mb-5 flex items-center justify-between">
-//               <div>
-//                 <p className="text-sm text-slate-400">Portfolio Workflow</p>
-//                 <h3 className="text-xl font-bold text-white">Project Readiness Check</h3>
-//               </div>
-//               <span className="rounded-full bg-emerald-400/10 px-3 py-1 text-xs font-semibold text-emerald-300">
-//                 Ready
-//               </span>
-//             </div>
-
-//             <div className="space-y-4">
-//               {processCards.map(([title, desc]) => (
-//                 <div
-//                   key={title}
-//                   className="rounded-2xl border border-white/10 bg-slate-950/70 p-4"
-//                 >
-//                   <div className="flex items-center justify-between">
-//                     <p className="font-semibold text-white">{title}</p>
-//                     <span className="h-2.5 w-2.5 rounded-full bg-sky-400" />
-//                   </div>
-//                   <p className="mt-1 text-sm text-slate-400">{desc}</p>
-//                 </div>
-//               ))}
-//             </div>
-//           </div>
-
-//           <div className="absolute -bottom-6 -right-6 hidden rounded-2xl border border-emerald-400/20 bg-emerald-400/10 p-5 text-emerald-100 shadow-xl lg:block">
-//             <p className="text-sm font-semibold">Focus Area</p>
-//             <p className="mt-1 text-2xl font-bold">Organic Growth</p>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
 
 export function Hero() {
+  const targetRoles = availability.targetRoles || [];
+  const workTypes = availability.workTypes || [];
+
   return (
     <section
       id="home"
-      className="relative overflow-hidden border-b border-white/10 bg-slate-950"
+      className="relative isolate overflow-hidden border-b border-white/10 bg-[#070D1B] text-white"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(14,165,233,0.22),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.14),transparent_35%)]" />
+      {/* Background Effects */}
+      <div className="pointer-events-none absolute -left-40 top-0 h-[450px] w-[450px] rounded-full bg-sky-500/10 blur-[120px]" />
 
-      <div className="relative mx-auto grid min-h-screen max-w-7xl items-center gap-12 px-6 py-28 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
-        <div>
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-sky-400/30 bg-sky-400/10 px-4 py-2 text-sm text-sky-200">
-            <span className="h-2 w-2 rounded-full bg-emerald-400" />
-            {profile.status}
+      <div className="pointer-events-none absolute right-0 top-20 h-[400px] w-[400px] rounded-full bg-emerald-500/5 blur-[120px]" />
+
+      <div className="relative mx-auto max-w-7xl px-5 pb-16 pt-24 sm:px-6 lg:px-8 lg:pb-24 lg:pt-36">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
+          {/* PROFILE CARD
+              Mobile: Foto di paling atas
+              Desktop: Foto di sebelah kanan */}
+          <div className="order-1 mx-auto w-full max-w-[340px] sm:max-w-[390px] lg:order-2 lg:max-w-[430px]">
+            <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-[#111B2D] p-4 shadow-[0_25px_80px_rgba(0,0,0,0.3)] sm:p-5">
+              {/* Profile Image */}
+              <div className="relative overflow-hidden rounded-[20px] bg-gradient-to-b from-[#203652] to-[#101827]">
+                <img
+                  src={profile.imageUrl}
+                  alt={profile.name}
+                  className="h-[240px] w-full object-cover object-top sm:h-[300px] lg:h-[365px]"
+                />
+
+                {/* Photo Overlay */}
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/95 via-slate-950/60 to-transparent px-5 pb-5 pt-20">
+                  <div className="flex items-center gap-2">
+                    <Globe2 size={17} className="text-sky-300" />
+
+                    <p className="text-sm font-semibold text-white">
+                      SEO Specialist
+                    </p>
+                  </div>
+
+                  <p className="mt-1 text-xs text-slate-300">
+                    Technical SEO • Content • Analytics
+                  </p>
+                </div>
+              </div>
+
+              {/* Profile Expertise */}
+              <div className="mt-5 grid grid-cols-2 gap-3">
+                <div className="rounded-2xl border border-white/[0.06] bg-white/[0.03] p-4">
+                  <p className="text-xl font-bold text-white">SEO</p>
+
+                  <p className="mt-1 text-xs text-slate-400">
+                    Audit & Optimization
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-white/[0.06] bg-white/[0.03] p-4">
+                  <p className="text-xl font-bold text-sky-300">GSC</p>
+
+                  <p className="mt-1 text-xs text-slate-400">
+                    Performance Analysis
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* PEMBUNGKUS FLEX: Mengatur Foto Sejajar Samping Kanan Nama */}
-          <div className="flex items-start justify-between gap-4 sm:justify-start sm:gap-6">
-            {/* Nama dan Role */}
-            <h1 className="max-w-4xl text-4xl font-bold tracking-tight text-white md:text-6xl">
+          {/* PROFILE INFORMATION
+              Mobile: Setelah Foto
+              Desktop: Sebelah Kiri */}
+          <div className="order-2 min-w-0 text-center lg:order-1 lg:text-left">
+            {/* Status Badge */}
+            <div className="mb-6 inline-flex max-w-full items-center gap-2 rounded-full border border-sky-400/20 bg-sky-400/[0.06] px-4 py-2 text-xs font-medium text-sky-300 sm:text-sm">
+              <span className="h-2 w-2 shrink-0 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.4)]" />
+
+              {profile.status}
+            </div>
+
+            {/* Introduction */}
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-slate-400 sm:text-sm">
+              Hello, I'm
+            </p>
+
+            {/* Name */}
+            <h1 className="text-4xl font-bold leading-[1.12] tracking-tight text-white sm:text-5xl lg:text-[58px]">
               {profile.name}
-              <span className="mt-3 block bg-gradient-to-r from-sky-300 to-emerald-300 bg-clip-text text-transparent">
-                {profile.role}
-              </span>
             </h1>
 
-            {/* FOTO PROFIL RESPONSIF: Menempel di Kanan, Mengikuti Skala Layar */}
-            <div className="relative h-24 w-24 shrink-0 sm:h-32 sm:w-32 md:h-36 md:w-36 mt-1 md:mt-2">
-              <span className="absolute inset-0 animate-ping rounded-full bg-sky-400/10 opacity-75" />
-              <img
-                src={profile.imageUrl || "https://unsplash.com"}
-                alt={profile.name}
-                className="relative h-full w-full rounded-full border-2 border-sky-400 object-cover shadow-xl"
-              />
-            </div>
-          </div>
+            {/* Role */}
+            <h2 className="mt-5 bg-gradient-to-r from-sky-300 via-cyan-200 to-emerald-300 bg-clip-text text-2xl font-semibold leading-tight text-transparent sm:text-3xl lg:text-[35px]">
+              {profile.role}
+            </h2>
 
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-            {profile.summary}
-          </p>
+            {/* Summary */}
+            <p className="mx-auto mt-6 max-w-xl text-sm leading-7 text-slate-400 sm:text-base sm:leading-8 lg:mx-0">
+              {profile.summary}
+            </p>
 
-          <div className="mt-8 flex flex-wrap gap-4">
-            <a
-              href={profile.cv}
-              target="_blank"
-              rel="noreferrer"
-              download
-              className="rounded-xl bg-sky-400 px-6 py-3 text-sm font-bold text-slate-950 transition hover:bg-sky-300"
-            >
-              Download CV
-            </a>
-
-            <a
-              href={profile.whatsapp}
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-xl border border-white/15 bg-white/10 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/15"
-            >
-              Hubungi WhatsApp
-            </a>
-
-            <a
-              href="#projects"
-              className="rounded-xl border border-white/15 px-6 py-3 text-sm font-bold text-slate-200 transition hover:bg-white/10"
-            >
-              Lihat Project
-            </a>
-          </div>
-
-          <div className="mt-6 grid gap-3 rounded-3xl border border-white/10 bg-white/[0.04] p-4 text-sm text-slate-300 sm:grid-cols-2">
-            <div>
-              <p className="text-slate-500">Status</p>
-              <p className="font-semibold text-emerald-300">
-                {availability.status}
-              </p>
-            </div>
-
-            <div>
-              <p className="text-slate-500">Location</p>
-              <p className="font-semibold text-white">
-                {availability.location}
-              </p>
-            </div>
-
-            <div>
-              <p className="text-slate-500">Target Role</p>
-              <p className="font-semibold text-white">
-                {availability.targetRoles.slice(0, 2).join(" / ")}
-              </p>
-            </div>
-
-            <div>
-              <p className="text-slate-500">Work Type</p>
-              <p className="font-semibold text-white">
-                {availability.workTypes.join(" / ")}
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-10 grid max-w-2xl gap-4 sm:grid-cols-3">
-            {heroStats.map(([value, label]) => (
-              <div
-                key={value}
-                className="rounded-2xl border border-white/10 bg-white/[0.04] p-4"
+            {/* CTA Buttons */}
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+              <a
+                href="#projects"
+                className="group inline-flex items-center justify-center gap-2 rounded-xl bg-sky-400 px-5 py-3.5 text-sm font-semibold text-slate-950 transition-all duration-300 hover:-translate-y-0.5 hover:bg-sky-300"
               >
-                <p className="text-2xl font-bold text-white">{value}</p>
-                <p className="mt-1 text-sm text-slate-400">{label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+                Lihat Project
+                <ArrowUpRight
+                  size={17}
+                  className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
+              </a>
 
-        {/* KOLOM 2: Dashboard Alur Kerja Portofolio */}
-        <div className="relative">
-          <div className="rounded-[2rem] border border-white/10 bg-white/[0.05] p-6 shadow-2xl backdrop-blur">
-            <div className="mb-5 flex items-center justify-between">
-              <div>
-                <p className="text-sm text-slate-400">Portfolio Workflow</p>
-                <h3 className="text-xl font-bold text-white">
-                  Project Readiness Check
-                </h3>
-              </div>
-              <span className="rounded-full bg-emerald-400/10 px-3 py-1 text-xs font-semibold text-emerald-300">
-                Ready
-              </span>
+              <a
+                href={profile.cv}
+                download
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/[0.04] px-5 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
+              >
+                <Download size={17} />
+                Download CV
+              </a>
+
+              <a
+                href={profile.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Hubungi WhatsApp"
+                className="inline-flex h-[48px] w-[48px] items-center justify-center rounded-xl border border-white/15 bg-white/[0.04] text-slate-300 transition hover:border-emerald-400/30 hover:text-emerald-300"
+              >
+                <MessageCircle size={19} />
+              </a>
             </div>
 
-            <div className="space-y-4">
-              {processCards.map(([title, desc]) => (
-                <div
-                  key={title}
-                  className="rounded-2xl border border-white/10 bg-slate-950/70 p-4"
+            {/* Availability */}
+            <div className="mt-9 flex flex-wrap items-center justify-center gap-x-7 gap-y-3 text-sm text-slate-400 lg:justify-start">
+              <div className="flex items-center gap-2">
+                <MapPin size={17} className="text-sky-400" />
+
+                <span>{availability.location}</span>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <CheckCircle2 size={17} className="text-emerald-400" />
+
+                <span>{availability.status}</span>
+              </div>
+            </div>
+
+            {/* Career Preferences */}
+            <div className="mt-6 flex flex-wrap justify-center gap-2 lg:justify-start">
+              {targetRoles.slice(0, 2).map((role) => (
+                <span
+                  key={role}
+                  className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-xs text-slate-400"
                 >
-                  <div className="flex items-center justify-between">
-                    <p className="font-semibold text-white">{title}</p>
-                    <span className="h-2.5 w-2.5 rounded-full bg-sky-400" />
-                  </div>
-                  <p className="mt-1 text-sm text-slate-400">{desc}</p>
-                </div>
+                  {role}
+                </span>
+              ))}
+
+              {workTypes.map((type) => (
+                <span
+                  key={type}
+                  className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-xs text-slate-400"
+                >
+                  {type}
+                </span>
               ))}
             </div>
           </div>
+        </div>
 
-          <div className="absolute -bottom-6 -right-6 hidden rounded-2xl border border-emerald-400/20 bg-emerald-400/10 p-5 text-emerald-100 shadow-xl lg:block">
-            <p className="text-sm font-semibold">Focus Area</p>
-            <p className="mt-1 text-2xl font-bold">Organic Growth</p>
+        {/* SEO EXPERTISE */}
+        <div className="mt-16 border-t border-white/10 pt-8 lg:mt-24">
+          <div className="mb-6 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+            <Globe2 size={15} />
+            SEO Expertise
+          </div>
+
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:gap-8">
+            {heroStats.map(({ icon: Icon, title, description }) => (
+              <div key={title} className="group flex items-center gap-3">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-sky-400/10 bg-sky-400/[0.06] text-sky-300 transition group-hover:border-sky-400/30 group-hover:bg-sky-400/10">
+                  <Icon size={20} strokeWidth={1.8} />
+                </div>
+
+                <div>
+                  <p className="text-sm font-semibold text-slate-200">
+                    {title}
+                  </p>
+
+                  <p className="mt-1 text-xs text-slate-500">{description}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
